@@ -5,4 +5,4 @@ function canThisBeTaco(){
     // functions get called here
 } // end readyNow
 
-//functions get created here
+// functions get created here

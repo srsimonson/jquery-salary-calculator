@@ -1,12 +1,15 @@
 body {
-    background-color: #e6ffec;
+    background-color: #ededed;
 }
 
 #container {
-    background-color:white;
-    width: 1000px;
+    background-color:#e6ffec;
+    width: 1500px;
     margin-left: 10px;
     margin-right: 10px;
+    border: 2px solid #e6ffec;
+    box-shadow: 2px 2px 20px grey;
+
 }
 
 #header {
@@ -25,3 +28,7 @@ body {
 #footer {
     background-color: chartreuse;
 }
+
+table, th, td {
+    border: 1px solid black;
+  }
