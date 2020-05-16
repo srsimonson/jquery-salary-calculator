@@ -1,0 +1,27 @@
+body {
+    background-color: #e6ffec;
+}
+
+#container {
+    background-color:white;
+    width: 1000px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#header {
+    background-color: grey;
+    text-align: center;
+}
+
+#addEmployee {
+    background-color: aqua;
+}
+
+#employeeList {
+    background-color: tan;
+}
+
+#footer {
+    background-color: chartreuse;
+}
