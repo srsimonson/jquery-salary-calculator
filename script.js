@@ -4,6 +4,7 @@ function readyNow(){
     $('#submitButton').on('click', handleSubmit);
 
 
+
 } // end readyNow
 
 // functions get created here
@@ -14,34 +15,80 @@ function handleSubmit() { // what happens when you click submit
     let idNumber = $( '.idNumber' ).val();
     let title = $( '.title' ).val();
     let annualSalary = $( '.annualSalary' ).val();
-    let employeeObject = { // empty employee object
+
+    // getter
+    let employeeObject = {
         firstName: firstName,
         lastName: lastName,
         idNumber: idNumber,
         title: title,
         annualSalary: annualSalary
     } // end employeeObject
+
     employeeArray.push( employeeObject ); // push employee object into employee array
-    $( '.firstName' ).val(''); // clear out name values
+    $( '.firstName' ).val('');
     $( '.lastName' ).val('');
     $( '.idNumber' ).val('');
     $( '.title' ).val('');
     $( '.annualSalary' ).val('');
-    displayEmployeeTable ( employeeArray ); // not running?
-    console.log('employeeArray:', employeeArray);
+    displayEmployeeList(employeeArray);
+    // displayEmployeeTable ( employeeArray );
 } // end handleSubmit function
 
-function displayEmployeeTable( arrayParam ) {
-    // $( '#employeeTable').empty();
-    for ( let i=0; i<arrayParam.length; i++ )
-    $('employeeTable').append(`
-            <td>${arrayParam[i].firstName}</td>
-            <td>${arrayParam[i].lastName}</td>
-            <td>${arrayParam[i].idNumber}</td>
-            <td>${arrayParam[i].title}</td>
-            <td>${arrayParam[i].annualSalary}</td>
-        `);
+function displayEmployeeList( arrayParam ) {
+    $('#employeeList').empty();
+    console.log('displayPeople:');
+    for (let i=0; i<arrayParam.length; i++)
+        $('#employeeList').append(`
+        <li>
+        ${arrayParam[i].firstName}
+        ${arrayParam[i].lastName}
+        ${arrayParam[i].idNumber}
+        ${arrayParam[i].title}
+        ${arrayParam[i].annualSalary} 
+        <button class="deleteBtn">delete</button>
+        </li>`)
 }
+
+function deleteItem(){
+    console.log('in deleteItem:');
+    // when delete item, remove from the DOM
+    // $(this).remove(); = removes "this" or the button
+    $(this).parent().remove();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function displayEmployeeTable( arrayParam ) {
+//     // $( '#employeeTable').empty();
+//     for ( let i=0; i<arrayParam.length; i++ )
+//     console.log('in displayEmployeeTable:');
+//     $('employeeTable').append();
+// }
 
 
 // function displayEmployeeTable ( arrayParam ) {
@@ -90,3 +137,11 @@ function displayEmployeeTable( arrayParam ) {
 //     <td>${arrayParam[i].title}</td>
 //     <td>${arrayParam[i].annualSalary}</td>
 // </th>);
+
+
+// `
+//     <td>${arrayParam[i].firstName}</td>
+//     <td>${arrayParam[i].lastName}</td>
+//     <td>${arrayParam[i].idNumber}</td>
+//     <td>${arrayParam[i].title}</td>
+//     <td>${arrayParam[i].annualSalary}</td>
