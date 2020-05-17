@@ -8,6 +8,9 @@ function readyNow(){
 } // end readyNow
 
 // functions get created here
+const totalBudget = 15000;
+let monthlyExpenses = [];
+
 let employeeArray = []; // empty array of employees to be pushed
 function handleSubmit() { // what happens when you click submit
     let firstName = $( '.firstName' ).val(); // retrieve data from DOM input
@@ -15,8 +18,6 @@ function handleSubmit() { // what happens when you click submit
     let idNumber = $( '.idNumber' ).val();
     let title = $( '.title' ).val();
     let annualSalary = $( '.annualSalary' ).val();
-
-    // getter
     let employeeObject = {
         firstName: firstName,
         lastName: lastName,
@@ -32,13 +33,17 @@ function handleSubmit() { // what happens when you click submit
     $( '.title' ).val('');
     $( '.annualSalary' ).val('');
     displayEmployeeList(employeeArray);
+    
     // displayEmployeeTable ( employeeArray );
 } // end handleSubmit function
 
+
 function displayEmployeeList( arrayParam ) {
     $('#employeeList').empty();
-    console.log('displayPeople:');
-    for (let i=0; i<arrayParam.length; i++)
+    for (let i=0; i<arrayParam.length; i++) {
+        monthlyExpenses.push( (arrayParam[i].annualSalary / 12));
+        console.log('monthlyExpenses', monthlyExpenses);
+        
         $('#employeeList').append(`
         <li>
         ${arrayParam[i].firstName}
@@ -48,6 +53,8 @@ function displayEmployeeList( arrayParam ) {
         ${arrayParam[i].annualSalary} 
         <button class="deleteBtn">delete</button>
         </li>`)
+    }
+    // here?
 }
 
 function deleteItem(){
@@ -56,6 +63,9 @@ function deleteItem(){
     // $(this).remove(); = removes "this" or the button
     $(this).parent().remove();
 }
+
+
+
 
 
 
