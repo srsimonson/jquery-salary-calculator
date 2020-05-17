@@ -9,7 +9,7 @@ Create an application that records employee salaries and adds salaries up to rep
 
 The application should have an 
 x input form that collects _employee first name, last name, ID number, job title, annual salary_.
-x- A 'Submit' button should collect the form information
+x A 'Submit' button should collect the form information
     - store the information to calculate monthly costs
     x append information to the DOM
     x clear the input fields. 

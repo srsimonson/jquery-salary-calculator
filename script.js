@@ -43,6 +43,7 @@ function displayEmployeeList( arrayParam ) {
     for (let i=0; i<arrayParam.length; i++) {
         monthlyExpenses.push( (arrayParam[i].annualSalary / 12));
         console.log('monthlyExpenses', monthlyExpenses);
+        console.log('arrayParam[i].annualSalary', arrayParam[i].annualSalary);
         
         $('#employeeList').append(`
         <li>
@@ -54,7 +55,7 @@ function displayEmployeeList( arrayParam ) {
         <button class="deleteBtn">delete</button>
         </li>`)
     }
-    // here?
+    //monthlyExpenses.pop();
 }
 
 function deleteItem(){
@@ -64,6 +65,25 @@ function deleteItem(){
     $(this).parent().remove();
 }
 
+function displayEmployeeList( arrayParam ) {
+    $('#employeeList').empty();
+    for (let i=0; i<arrayParam.length; i++) {
+        monthlyExpenses.push( (arrayParam[i].annualSalary / 12));
+        console.log('monthlyExpenses', monthlyExpenses);
+        console.log('test log');
+        
+        $('#employeeList').append(`
+        <li>
+        ${arrayParam[i].firstName}
+        ${arrayParam[i].lastName}
+        ${arrayParam[i].idNumber}
+        ${arrayParam[i].title}
+        ${arrayParam[i].annualSalary} 
+        <button class="deleteBtn">delete</button>
+        </li>`)
+    }
+    //monthlyExpenses.pop();
+}
 
 
 
