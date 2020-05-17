@@ -2,7 +2,7 @@ $( document ).ready( readyNow );
 function readyNow(){
     // functions get called here:
     $('#submitButton').on('click', handleSubmit);
-
+    $('#employeeList').on('deleteBtn').on('click', '.deleteBtn', deleteItem);
 
 
 } // end readyNow
