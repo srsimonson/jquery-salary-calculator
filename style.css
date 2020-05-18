@@ -4,7 +4,7 @@ body {
 
 #container {
     background-color:#e6ffec;
-    width: 800px;
+    width: 825px;
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 50px;
@@ -22,20 +22,35 @@ body {
 }
 
 #addEmployee {
+    width: 700px;
+    margin-left: 10px;
     background-color: #e8e1e1;
     font-family: Tahoma, Geneva, sans-serif;
-   
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 10px;
 }
 
 #employeeList {
+    width: 700px;
     background-color:#e8e1e1;
     font-family: Tahoma, Geneva, sans-serif;
     padding: 10px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 10px;
 }
 
 #footer {
+    width: 700px;
     background-color: #e8e1e1;
     font-family: Tahoma, Geneva, sans-serif;
+    border-radius: 5px;
+    border: 1px solid grey;
+    box-shadow: 2px 2px 5px grey;
+    margin-left: 10px;
 }
 
 table, th {
