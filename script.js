@@ -47,13 +47,6 @@ function displayToDom() {
     for (let i=0; i<employeeArray.length; i++) {
         monthlyLabor =  monthlyLabor + Number((employeeArray[i].annualSalary / 12));
         $('#employeeTable').append(
-        // `<li>
-        //     ${employeeArray[i].firstName}
-        //     ${employeeArray[i].lastName}
-        //     ${employeeArray[i].idNumber}
-        //     ${employeeArray[i].title}
-        //     ${employeeArray[i].annualSalary} 
-        //     <button class="deleteBtn">delete</button>
         `<tr>
             <td>${employeeArray[i].firstName}</td>
              <td>${employeeArray[i].lastName}</td>
@@ -62,15 +55,6 @@ function displayToDom() {
              <td>${employeeArray[i].annualSalary}</td> 
              <td><button class="deleteBtn">delete</button></td>
          </td>`)
-
-
-
-
-
-
-
-
-        // </li>`)
     } // end for loop
     x = x + monthlyLabor;
     monthlySpending = x;
@@ -82,12 +66,12 @@ function displayToDom() {
     }
 } // end displayToDom
 
-// Table works, but functionality stops working when this code replaces <li>
-        // `<tr>
-        //     <td>${employeeArray[i].firstName}</td>
-        //     <td>${employeeArray[i].lastName}</td>
-        //     <td>${employeeArray[i].idNumber}</td>
-        //     <td>${employeeArray[i].title}</td>
-        //     <td>${employeeArray[i].annualSalary}</td> 
-        //     <td><button class="deleteBtn">delete</button></td>
-        // </td>`)
+
+        // `<li>
+        //     ${employeeArray[i].firstName}
+        //     ${employeeArray[i].lastName}
+        //     ${employeeArray[i].idNumber}
+        //     ${employeeArray[i].title}
+        //     ${employeeArray[i].annualSalary} 
+        //     <button class="deleteBtn">delete</button>
+        // </li>`)
