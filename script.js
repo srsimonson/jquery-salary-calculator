@@ -3,14 +3,14 @@ function readyNow(){
     // functions get called here:
     $('#submitButton').on('click', handleSubmit);
     $('#employeeList').on('deleteBtn').on('click', '.deleteBtn', deleteItem);
-    
+    //$('#footer').on('something', turnRed);
 
 } // end readyNow
 
 // functions get created here
-const totalBudget = 15000;
+const totalBudget = 20000;
+let monthlySpending = 0;
 let employeeArray = []; // empty array of employees to be pushed
-
 
 function handleSubmit() { // what happens when you click submit
     let firstName = $( '.firstName' ).val(); // retrieve data from DOM input
@@ -34,51 +34,22 @@ function handleSubmit() { // what happens when you click submit
     $( '.annualSalary' ).val('');
     displayToDom( employeeArray );
     // tallyMonthlyExpenses( monthlyExpenses );
-
-    
     // displayEmployeeTable ( employeeArray );
+    
 } // end handleSubmit function
 
-
-// function displayEmployeeList( arrayParam ) {
-//     $('#employeeList').empty();
-//     for (let i=0; i<arrayParam.length; i++) {
-//         monthlyExpenses.push( (arrayParam[i].annualSalary / 12));
-//         console.log('monthlyExpenses', monthlyExpenses);
-//         console.log('arrayParam[i].annualSalary', arrayParam[i].annualSalary);
-    
-//         $('#employeeList').append(`
-//         <li>
-//         ${arrayParam[i].firstName}
-//         ${arrayParam[i].lastName}
-//         ${arrayParam[i].idNumber}
-//         ${arrayParam[i].title}
-//         ${arrayParam[i].annualSalary} 
-//         <button class="deleteBtn">delete</button>
-//         </li>`)
-//     }
-//     //monthlyExpenses.pop();
-// }
-
-function deleteItem(){
-    console.log('in deleteItem:');
-    // when delete item, remove from the DOM
-    // $(this).remove(); = removes "this" or the button
+function deleteItem() {
     $(this).parent().remove();
 }
 
-function displayToDom(  ) {
+function displayToDom() {
+    //turnRed();
     let x = 0;
     let monthlyLabor = 0;
     $('#employeeList').empty();
     $('#totalSalaries').empty();
     for (let i=0; i<employeeArray.length; i++) {
-        //monthlyExpenses.push(( arrayParam[i].annualSalary / 12 ));
         monthlyLabor = monthlyLabor + Number((employeeArray[i].annualSalary / 12));
-        
-        console.log('monthlyLabor', monthlyLabor);
-        console.log('arrayParam[i].annualSalary:', employeeArray[i].annualSalary);
-        console.log('test log');
         $('#employeeList').append(
         `<li>
             ${employeeArray[i].firstName}
@@ -88,15 +59,23 @@ function displayToDom(  ) {
             ${employeeArray[i].annualSalary} 
             <button class="deleteBtn">delete</button>
         </li>`)
-        $('#totalSalaries').append(monthlyLabor);
     } // end for loop
     x = x + monthlyLabor;
-    //x.push(monthlyLabor);
-    console.log('x post push', x);
+    monthlySpending = x;
     $('#totalSalaries').empty();
     $('#totalSalaries').append(x);
-    
+    console.log('in turnRed: ', monthlySpending);
+    if ( monthlySpending > totalBudget) {
+        $('#totalSalaries').css({"background-color":"red"});
+    }
 } // end displayToDom
+
+// function turnRed(){
+//     console.log('in turnRed: ', monthlySpending);
+//     if ( monthlySpending > totalBudget) {
+//         $('#totalSalaries').css({"background-color":"red"});
+//     }
+// }
 
 // function appendEmployee() {
 //     $('#iAppend').empty();
